@@ -1,0 +1,91 @@
+.cal-container {
+  border: 1px solid #666;
+  color: #555;
+  user-select: none;
+}
+
+.cal-day,
+.cal-month {
+  min-height: 265px;
+}
+
+.cal-day {
+  display: inline-block;
+  vertical-align: top;
+  border-right: 1px solid #666;
+}
+
+.cal-day-name {
+  border-bottom: 1px solid #666;
+  font-size: 20px;
+  padding: 10px 0px;
+  width: 250px;
+  text-align: center;
+}
+
+.cal-day-number {
+  padding: 45px 0px 20px 0;
+  font-size: 100px;
+  width: 250px;
+  text-align: center;
+}
+
+.cal-month {
+  display: inline-block;
+  vertical-align: top;
+  width: 350px;
+}
+
+.cal-month-header {
+  font-size: 20px;
+  padding: 10px 16px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cal-month-prev,
+.cal-month-next,
+.cal-month-day {
+  cursor: pointer;
+}
+
+.cal-month-name {
+
+}
+
+.cal-month-body {
+  width: 100%;
+}
+
+.cal-week-day,
+.cal-month-day,
+.cal-placeholder-day {
+  display: inline-block;
+  width: calc(100% / 8);
+  text-align: center;
+  padding: 6px 0;
+  box-sizing: border-box;
+}
+
+.cal-week-day {
+  font-weight: bold;
+}
+
+.cal-month-day.active {
+  color: #fff;
+  background: #555;
+  font-weight: bold;
+}
+
+@media (max-width: 650px) {
+  .cal-day,
+  .cal-day-name,
+  .cal-day-number,
+  .cal-month {
+    width: 100%;
+  }
+
+  .cal-day {
+    border-bottom: 1px solid #666;
+  }
+}
