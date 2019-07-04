@@ -1,18 +1,17 @@
-[36m#!/bin/bash[m
+#!/bin/bash
 
-[36m# Sync master branch and prepare staging branch.[m
+# Sync master branch and prepare staging branch.
 git checkout master
 git pull origin master
 git checkout -B gh-pages-staging
 git branch -D gh-pages
 git push origin --delete gh-pages
 
-[36m# Build storybook-static for staging and push to gh-pages.[m
-npm run build
-git commit -m [31m"Deploy to gh-pages"[m
-git subtree split --prefix build -b gh-pages
-git push origin -f gh-pages[31m:[mgh-pages
+# Push public to gh-pages.
+git commit -m "Deploy to gh-pages"
+git subtree split --prefix public -b gh-pages
+git push origin -f gh-pages:gh-pages
 
-[36m# Clean up branches and files.[m
+# Clean up branches and files.
 git checkout master
 git branch -D gh-pages gh-pages-staging
